@@ -21,7 +21,8 @@ class Movie {
 		
 };
 
+enum type { text , html , json };
 
-void printMovie(const Movie movie);
+void printMovie(const Movie movie, type outputType = text);
 
 #endif
