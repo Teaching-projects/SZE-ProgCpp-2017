@@ -3,12 +3,12 @@
 Movie::Movie(std::string title, int date, std::string directorname) 
 	: title(title), date(date), director(directorname) {}
 
-std::string Movie::getTitle() const {
-  return title;
-}
+std::string Movie::getTitle() const { return title;}
+Director Movie::getDirector() const { return director;}
+int Movie::getReleaseDate() const { return date;} 
 
-void Movie::printOut() const {
-	std::cout << title << "\n";
-	std::cout << "Directed by: "<< director.getName()<< "\n";
-	std::cout << "Year of release: " << date << "\n";
+void printMovie(const Movie movie) {
+	std::cout << movie.getTitle() << "\n";
+	std::cout << "Directed by: "<< movie.getDirector().getName()<< "\n";
+	std::cout << "Year of release: " << movie.getReleaseDate() << "\n";
 }

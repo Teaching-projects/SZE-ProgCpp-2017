@@ -14,10 +14,14 @@ class Movie {
 	
   public:
 	Movie(std::string title, int date, std::string directorname);
-	std::string getTitle() const;
 	
-	void printOut() const;
+	std::string getTitle() const;
+	Director getDirector() const;
+	int getReleaseDate() const;
+		
 };
 
+
+void printMovie(const Movie movie);
 
 #endif
