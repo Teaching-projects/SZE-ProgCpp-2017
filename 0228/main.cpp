@@ -4,12 +4,9 @@
 using std::cout;
 
 int main(){
-	Movie hp;
-	hp.title = "Legendary beasts and where to find them";
-	hp.date = 2016;
+	Movie hp("Legendary beasts and where to find them",2016);
 	
-	cout << hp.title << "\n";
-	cout << hp.date << "\n";
+	cout << hp.getTitle() << "\n";
 	
 	return 0;
 }
