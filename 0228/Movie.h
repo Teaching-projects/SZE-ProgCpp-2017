@@ -2,6 +2,7 @@
 #define MOVIE_H
 
 #include <string>
+#include <iostream>
 #include "Director.h"
 
 class Movie {
@@ -13,7 +14,9 @@ class Movie {
 	
   public:
 	Movie(std::string title, int date, std::string directorname);
-	std::string getTitle();
+	std::string getTitle() const;
+	
+	void printOut() const;
 };
 
 

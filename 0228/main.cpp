@@ -10,5 +10,7 @@ int main(){
 	Movie hp("Fantastic beasts and where to find them",2016,yates.getName());
 	cout << hp.getTitle() << "\n";
 	
+	hp.printOut();
+	
 	return 0;
 }

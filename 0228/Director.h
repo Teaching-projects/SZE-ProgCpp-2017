@@ -10,7 +10,7 @@ class Director {
 		
 	public:
 		Director(std::string name);
-		std::string getName();
+		std::string getName() const;
 };
 
 #endif 
