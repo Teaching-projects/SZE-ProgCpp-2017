@@ -24,7 +24,7 @@ int main(){
 	Survivor Deryl;
 	
 	
-	Deryl.pickup(AK);
+	//Deryl.pickup(AK);
 	shootZombie(Stan,Deryl,10);
 	shootZombie(Amanda,Deryl,33);
 	

@@ -9,5 +9,6 @@ void Survivor::pickup(Gun& gun){
 
 
 double Survivor::pew(double distance){
-	return guns->pew(distance);
+	if (guns) return guns->pew(distance);
+	else throw OutOfAmmoException();
 }
