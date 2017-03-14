@@ -2,6 +2,7 @@
 #define SURVIVOR_HPP
 
 #include "gun.hpp"
+#include "zombie.hpp"
 
 class Survivor {
 	private:
@@ -9,7 +10,7 @@ class Survivor {
 	public:
 		Survivor();
 		void pickup(Gun& gun);
-		double pew(double distance);
+		void pew(Zombie& z);
 };
 
 #endif

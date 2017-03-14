@@ -1,10 +1,22 @@
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 
-class Zombie {
-	public:
+#include <string>
+using std::string;
+
+class Zombie {		
 		double HP;
-		Zombie(double HP);
+		double distance;
+		string name;
+		
+	public:
+		Zombie(string name, double HP, double distance);
+		
+		double getHP() const;
+		double getDistance() const;
+		string getName() const;
+		
+		friend class Survivor;
 };
 
 

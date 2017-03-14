@@ -5,28 +5,29 @@ using namespace std;
 #include "zombie.hpp"
 #include "survivor.hpp"
 
-void shootZombie(Zombie& z, Survivor& s, double distance) {
+void shootZombie(Zombie& z, Survivor& s) {
 	try {
-		while (z.HP>0){
-			z.HP -= s.pew(distance);
-			cout<<"pew, HP decreased to "<<z.HP<<"\n";
+		while (z.getHP()>0){
+			s.pew(z);
+			cout<<"pew, HP decreased to "<<z.getHP()<<"\n";
 		}
-		cout<<"Yeppeeeee\n";
+		cout<<"Yeppeeeee "<<z.getName()<<" diedied (again)\n";
 	} catch (OutOfAmmoException e) {
 		cout<<"Run!!!!\n";
 	}
 }
 
-int main(){
+int main(int argc, char** argv){
+	
 	Gun AK(30,1.2,0.2,5);
-	Zombie Stan(10);
-	Zombie Amanda(Stan);
+	Zombie Stan("Stan",10,10);
+	Zombie Amanda("Amanda",10,33);
 	Survivor Deryl;
 	
 	
-	//Deryl.pickup(AK);
-	shootZombie(Stan,Deryl,10);
-	shootZombie(Amanda,Deryl,33);
+	Deryl.pickup(AK);
+	shootZombie(Stan,Deryl);
+	shootZombie(Amanda,Deryl);
 	
 	
 	return 0;	

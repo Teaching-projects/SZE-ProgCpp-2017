@@ -8,7 +8,9 @@ void Survivor::pickup(Gun& gun){
 }
 
 
-double Survivor::pew(double distance){
-	if (guns) return guns->pew(distance);
+void Survivor::pew(Zombie& z){
+	if (guns) {
+		z.HP -= guns->pew(z.distance);
+	}
 	else throw OutOfAmmoException();
 }
