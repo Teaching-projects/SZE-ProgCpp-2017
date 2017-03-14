@@ -13,7 +13,10 @@ double Gun::getRate_of_fire() const {return rate_of_fire;}
 double Gun::getDamage()const {return damage;}
 
 
-void Gun::pew(){
-	if (ammo) ammo--;
+double Gun::pew(double distance){
+	if (ammo) {
+		ammo--;
+		return damage / (distance - 2) / accuracy; 
+	}
 	else throw OutOfAmmoException();
 }

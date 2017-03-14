@@ -22,7 +22,7 @@ class Gun {
 		double getRate_of_fire()const;
 		double getDamage() const;
 		
-		void pew();
+		double pew(double distance);
 		
 		
 };
