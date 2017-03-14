@@ -20,3 +20,7 @@ double Gun::pew(double distance){
 	}
 	else throw OutOfAmmoException();
 }
+
+void Gun::reload(){
+	ammo=magazine;
+}

@@ -23,6 +23,7 @@ class Gun {
 		double getDamage() const;
 		
 		double pew(double distance);
+		void reload();
 		
 		
 };
