@@ -11,6 +11,7 @@ class Zombie {
 		
 	public:
 		Zombie(string name, double HP, double distance);
+		~Zombie();
 		
 		double getHP() const;
 		double getDistance() const;

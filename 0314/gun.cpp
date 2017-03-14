@@ -17,6 +17,7 @@ double Gun::pew(double distance){
 	if (ammo) {
 		ammo--;
 		return damage / (distance - 2) / accuracy; 
+		//TODO correct expression, devision by 0
 	}
 	else throw OutOfAmmoException();
 }

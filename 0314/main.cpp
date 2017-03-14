@@ -39,6 +39,10 @@ int main(int argc, char** argv){
 		shootZombie(*horde[z],Deryl);
 	
 	
+	for (int z =0;z<zcount; z++){
+		delete horde[z];
+	}
+	delete [] horde;
 	
 	return 0;	
 }
