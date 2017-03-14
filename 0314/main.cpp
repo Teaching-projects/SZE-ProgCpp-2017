@@ -32,6 +32,8 @@ int main(int argc, char** argv){
 	
 	
 	Gun AK(30,1.2,0.2,5);
+	Gun M4(30,1,0.1,8);
+	
 	Survivor Deryl;	
 	Deryl.pickup(AK);
 	

@@ -25,3 +25,5 @@ double Gun::pew(double distance){
 void Gun::reload(){
 	ammo=magazine;
 }
+
+int Gun::getAmmo() const {return ammo;}

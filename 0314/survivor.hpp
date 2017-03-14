@@ -6,9 +6,11 @@
 
 class Survivor {
 	private:
-		Gun *guns;
+		Gun **guns;
+		int nguns;
 	public:
 		Survivor();
+		~Survivor();
 		void pickup(Gun& gun);
 		void pew(Zombie& z);
 };

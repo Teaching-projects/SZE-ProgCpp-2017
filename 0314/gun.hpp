@@ -21,6 +21,7 @@ class Gun {
 		double getAccuracy()const;
 		double getRate_of_fire()const;
 		double getDamage() const;
+		int getAmmo() const;
 		
 		double pew(double distance);
 		void reload();
