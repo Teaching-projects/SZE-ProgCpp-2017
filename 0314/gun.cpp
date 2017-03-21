@@ -37,4 +37,4 @@ void Gun::reload(){
 	}
 }
 
-int Gun::getAmmo() const {return currentammo;}
+int Gun::getAmmo() const {return ammo+currentammo;}
