@@ -12,10 +12,10 @@ class Gun {
 		double damage;
 		
 		int ammo;
+		int currentammo;
 		
 	public:
-		Gun();
-	  Gun(int m, double a, double r, double d);
+	  Gun(int m, double a, double r, double d, int ammo);
 	
 		int getMagazine()const;
 		double getAccuracy()const;
