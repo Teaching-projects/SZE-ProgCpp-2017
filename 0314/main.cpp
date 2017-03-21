@@ -36,6 +36,7 @@ int main(int argc, char** argv){
 	
 	Survivor Deryl;	
 	Deryl.pickup(AK);
+	Deryl.pickup(M4);
 	
 	for(int z=0; z<zcount; z++)
 		shootZombie(*horde[z],Deryl);
