@@ -1,5 +1,5 @@
 #include "survivor.hpp"
-#include <iostream> 
+#include <iostream>
 
 Survivor::Survivor():guns(0),nguns(0) {}
 
@@ -25,10 +25,17 @@ void Survivor::pickup(Gun& gun){
 
 void Survivor::pew(Zombie& z){
 	for (int g = 0; g < nguns ; g++) {
-		if (guns[g]->getAmmo()) {
+		try {
 			z.HP -= guns[g]->pew(z.distance);
 			std::cout<<"Shooting with "<<g+1<<". weapon\n";
 			return;
+		} catch (OutOfAmmoException e) {
+			if (guns[g]->getAmmo()) {
+				guns[g]->reload();
+				std::cout<<"Reload\n";
+				z.HP -= guns[g]->pew(z.distance);
+				return;
+			}
 		}
 	}
 	throw OutOfAmmoException();

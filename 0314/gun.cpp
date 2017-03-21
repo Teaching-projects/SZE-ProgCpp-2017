@@ -1,10 +1,15 @@
 #include "gun.hpp"
 
-Gun::Gun():
-	magazine(7), accuracy(2), rate_of_fire(0.5), damage(1), ammo(7) {}
-
-Gun::Gun(int m, double a, double r, double d):
-	magazine(m), accuracy(a), rate_of_fire(r), damage(d), ammo(m) {}
+Gun::Gun(int m, double a, double r, double d, int ammo):
+	magazine(m), accuracy(a), rate_of_fire(r), damage(d) {
+		if (ammo > m) {
+			this->currentammo=m;
+			this->ammo=ammo-m;
+		} else {
+			this->currentammo=ammo;
+			this->ammo = 0;
+		}
+	}
 
 
 int Gun::getMagazine() const{return magazine;}
@@ -14,8 +19,8 @@ double Gun::getDamage()const {return damage;}
 
 
 double Gun::pew(double distance){
-	if (ammo) {
-		ammo--;
+	if (currentammo) {
+		currentammo--;
 		return damage / (distance - 2) / accuracy; 
 		//TODO correct expression, devision by 0
 	}
@@ -23,7 +28,13 @@ double Gun::pew(double distance){
 }
 
 void Gun::reload(){
-	ammo=magazine;
+	if (currentammo+ammo >= magazine) {
+		ammo = currentammo+ammo-magazine;
+		currentammo=magazine;		
+	} else {
+		currentammo+=ammo;
+		ammo=0;
+	}
 }
 
-int Gun::getAmmo() const {return ammo;}
+int Gun::getAmmo() const {return ammo+currentammo;}
