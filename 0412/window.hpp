@@ -11,11 +11,13 @@ class Window {
 		unsigned int width, height;
 	public:
 		Window(unsigned int w, unsigned int h);
+		virtual ~Window(){}
 		virtual char display(unsigned int x, unsigned int y) const =0 ;
 		unsigned int area() const;
 		unsigned int getWidth() const;
 		unsigned int getHeight() const;
 		void resize(unsigned int newWidth, unsigned int newHeight);
+		
 };
 
 ostream& operator << (ostream& s, const Window &w);
@@ -45,10 +47,10 @@ void operator>>(string toAppend, TextWindow& w);
 
 class FibonacciWindow : public Window {
 	private:
-	  int count;
-		int* numbers;
+	  unsigned int count;
+		unsigned int* numbers;
 	public:
-		FibonacciWindow(unsigned int w, unsigned int h, int count =5);
+		FibonacciWindow(unsigned int w, unsigned int h, unsigned int count =5);
 		~FibonacciWindow();
 		char display(unsigned int x, unsigned int y) const;
 };
