@@ -53,3 +53,31 @@ string TextWindow::getText() const {return text;}
 void operator>>(string toAppend, TextWindow& w){
 	w.setText(toAppend + w.getText());
 }
+
+
+FibonacciWindow::FibonacciWindow(unsigned int w, unsigned int h, int count)
+:Window(w,h),count(count) {
+	numbers = new int[count];
+	if (count >=1){
+		numbers[0]=1;
+		if (count >=2){
+			numbers[1]=1;
+			for (int i=2; i<count; i++)
+				numbers[i]=numbers[i-1]+numbers[i-2];
+		}
+	}
+}
+
+FibonacciWindow::~FibonacciWindow(){ delete [] numbers; }
+
+char FibonacciWindow::display(unsigned int x, unsigned int y) const {
+	string content="";
+	for(int i=0; i< count; i++) 
+		for(int db=0; db<numbers[i]; db++)
+			content+= ((i%2)?'!':'*');
+	if (content.length() > x * width + y)
+		return content[x * width + y];
+	else return ' ';
+}
+
+

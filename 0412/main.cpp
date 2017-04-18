@@ -19,7 +19,11 @@ int main(){
 	w2<<"-----vegere-----";
 	"---elejere--">>w2;
 	
-	cout<<w2<<"na ez volt az en ablakom";
+	cout<<w2<<"na ez volt az en ablakom\n";
+	
+	
+	FibonacciWindow w3(20,4,16);
+	cout<<w3;
 	
 
   

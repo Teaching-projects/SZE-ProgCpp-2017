@@ -43,6 +43,16 @@ class TextWindow : public Window {
 void operator>>(string toAppend, TextWindow& w);
 
 
+class FibonacciWindow : public Window {
+	private:
+	  int count;
+		int* numbers;
+	public:
+		FibonacciWindow(unsigned int w, unsigned int h, int count =5);
+		~FibonacciWindow();
+		char display(unsigned int x, unsigned int y) const;
+};
+
 
 
 
